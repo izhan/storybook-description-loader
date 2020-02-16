@@ -1,0 +1,25 @@
+{
+  "name": "story-description-loader",
+  "version": "1.0.0",
+  "description": "Webpack loader for automatically generating addon-docs descriptions from component comments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izhan/storybook-description-loader.git"
+  },
+  "keywords": [
+    "storybook",
+    "addon-docs",
+    "comments",
+    "storyDescription"
+  ],
+  "author": "Irvin Zhan @izhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/izhan/storybook-description-loader/issues"
+  },
+  "homepage": "https://github.com/izhan/storybook-description-loader#readme"
+}
