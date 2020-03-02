@@ -1,17 +1,21 @@
 /**
- * Docgen for each story. Automatically adds docs-addon description to stories
- * that have a comment. See https://github.com/storybookjs/storybook/issues/8527
- * for tracking upstream issue.
+ * Docgen for each Storybook story. Automatically adds docs-addon description to stories
+ * that have a comment. 
+ * 
+ * See https://github.com/storybookjs/storybook/issues/8527 for issue that inspired
+ * this loader.
  *
  * Usage:
  *
  *    // This is a description of the story below that will
  *    // ultimately be rendered in Storybook
- *    export const Default = () => <MyComponent />
+ *    export const Variation = () => <MyComponent />
  *
  */
-
+const loaderUtils = require("loader-utils")
 const babel = require("@babel/core")
+const validateOptions = require("schema-utils");
+const schema = require("./options.json")
 
 function createDescriptionNode(name, description) {
     return babel.types.expressionStatement(
@@ -68,9 +72,17 @@ function annotateDescriptionPlugin() {
 }
 
 module.exports = function (source) {
+    const options = loaderUtils.getOptions(this) || {};
+
+    validateOptions(schema, options, {
+      name: "Story Description Loader"
+    });
+
+    const isTSX = options.isTSX || false;
+    const defaultPlugins = options.isTSX || options.isJSX ? [["@babel/plugin-transform-typescript", { isTSX }]] : []
     const output = babel.transformSync(source, {
-        plugins: [["@babel/plugin-transform-typescript", { isTSX: true }], annotateDescriptionPlugin],
-        sourceType: "module",
-    })
+      plugins: [...defaultPlugins, annotateDescriptionPlugin],
+      sourceType: "module"
+    });
     return output.code
 }

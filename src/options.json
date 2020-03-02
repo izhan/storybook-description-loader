@@ -1,0 +1,13 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "isJSX": {
+            "description": "Enables/disables whether to use JSX-parser for source file.",
+            "type": "boolean"
+        },
+        "isTSX": {
+            "description": "Enables/disables whether to use TSX-parser for source file.",
+            "type": "boolean"
+        }
+    }
+}
