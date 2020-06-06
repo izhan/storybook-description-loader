@@ -37,7 +37,8 @@ module: {
   rules: [
     {
       test: /\.stories\.jsx/,
-      use: [{ loader: “story-description-loader”, options: { isJSX: true } }],
+      use: [{ loader: "story-description-loader", options: { isJSX: true } }],
+    }
   ]
 }
 ```
@@ -48,7 +49,8 @@ module: {
   rules: [
     {
       test: /\.stories\.tsx/,
-      use: [{ loader: “story-description-loader”, options: { isTSX: true } }],
+      use: [{ loader: "story-description-loader", options: { isTSX: true } }],
+    }
   ]
 }
 ```
@@ -60,7 +62,8 @@ module: {
   rules: [
     {
       test: /\.stories\.tsx/,
-      use: [{ loader: “story-description-loader” }],
+      use: [{ loader: "story-description-loader" }],
+    }
   ]
 }
 ```
