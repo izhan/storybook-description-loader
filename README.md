@@ -59,7 +59,7 @@ module: {
 module: {
   rules: [
     {
-      test: /\.stories\.tsx/,
+      test: /\.stories\.js/,
       use: [{ loader: “story-description-loader” }],
   ]
 }
