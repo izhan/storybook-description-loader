@@ -2,6 +2,9 @@
 
 Add JSDoc comments to your storybook examples that show up on your DocsPage.
 
+See Github issue that inspired this package:
+https://github.com/storybookjs/storybook/issues/8527#issuecomment-593801278
+
 # Usage
 
 **Code**
