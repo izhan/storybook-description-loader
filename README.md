@@ -1,3 +1,8 @@
+# DEPRECATED – use Storybook's official docgen instead
+
+See https://github.com/storybookjs/storybook/pull/19684. Should be available for Storybook v7.0.0 or later
+
+
 # Storybook Description Loader
 
 Add JSDoc comments to your storybook examples that show up on your DocsPage.
